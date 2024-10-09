@@ -11,6 +11,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@tweenjs/tween.js": "^25.0.0",
+    "three": "^0.169.0",
+    "troisjs": "^0.3.4",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
