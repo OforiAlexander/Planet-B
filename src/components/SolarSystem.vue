@@ -94,21 +94,142 @@
   };
   
   const addStarField = () => {
-    const starGeometry = new THREE.BufferGeometry();
-    const starMaterial = new THREE.PointsMaterial({color: 0xFFFFFF, size: 0.1});
-  
-    const starVertices = [];
-    for (let i = 0; i < 10000; i++) {
-      const x = (Math.random() - 0.5) * 2000;
-      const y = (Math.random() - 0.5) * 2000;
-      const z = -Math.random() * 2000;
-      starVertices.push(x, y, z);
+  const starGeometry = new THREE.BufferGeometry();
+  const starMaterial = new THREE.PointsMaterial({
+    color: 0xFFFFFF,
+    size: 0.1,
+    transparent: true,
+    vertexColors: true
+  });
+
+  const starVertices = [];
+  const starColors = [];
+  for (let i = 0; i < 10000; i++) {
+    const x = (Math.random() - 0.5) * 2000;
+    const y = (Math.random() - 0.5) * 2000;
+    const z = -Math.random() * 2000;
+    starVertices.push(x, y, z);
+
+    // Add color variation
+    const r = Math.random();
+    const g = Math.random();
+    const b = Math.random();
+    starColors.push(r, g, b);
+  }
+
+  starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+  starGeometry.setAttribute('color', new THREE.Float32BufferAttribute(starColors, 3));
+  const stars = new THREE.Points(starGeometry, starMaterial);
+  scene.add(stars);
+
+  // Twinkling effect
+  const twinkle = () => {
+    const positions = stars.geometry.attributes.position.array;
+    const colors = stars.geometry.attributes.color.array;
+    for (let i = 0; i < positions.length; i += 3) {
+      colors[i] *= 0.9 + Math.random() * 0.2;
+      colors[i + 1] *= 0.9 + Math.random() * 0.2;
+      colors[i + 2] *= 0.9 + Math.random() * 0.2;
     }
-  
-    starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
-    const stars = new THREE.Points(starGeometry, starMaterial);
-    scene.add(stars);
+    stars.geometry.attributes.color.needsUpdate = true;
   };
+
+  // Rotating star field
+  const rotateStars = () => {
+    stars.rotation.y += 0.0001;
+  };
+
+  // Shooting stars
+  const addShootingStar = () => {
+    const shootingStarGeometry = new THREE.BufferGeometry();
+    const shootingStarMaterial = new THREE.LineBasicMaterial({ color: 0xFFFFFF });
+
+    const points = [];
+    points.push(new THREE.Vector3(-1000, Math.random() * 1000 - 500, Math.random() * 500 - 250));
+    points.push(new THREE.Vector3(1000, Math.random() * 1000 - 500, Math.random() * 500 - 250));
+
+    shootingStarGeometry.setFromPoints(points);
+    const shootingStar = new THREE.Line(shootingStarGeometry, shootingStarMaterial);
+    scene.add(shootingStar);
+
+    setTimeout(() => {
+      scene.remove(shootingStar);
+    }, 1000);
+  };
+
+  // Mouse movement parallax effect
+  const onMouseMove = (event) => {
+    const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+    const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    stars.position.x = mouseX * 10;
+    stars.position.y = mouseY * 10;
+  };
+
+  // Camera zoom animation
+  const onWheel = (event) => {
+    const zoomSpeed = 0.1;
+    camera.position.z += event.deltaY * zoomSpeed;
+    camera.position.z = Math.max(3, Math.min(camera.position.z, 20));
+  };
+
+  // Trigger distant nebulas or galaxies on click
+  const onClick = (event) => {
+    const mouse = new THREE.Vector2(
+      (event.clientX / window.innerWidth) * 2 - 1,
+      -(event.clientY / window.innerHeight) * 2 + 1
+    );
+
+    const raycaster = new THREE.Raycaster();
+    raycaster.setFromCamera(mouse, camera);
+
+    const intersects = raycaster.intersectObjects(scene.children);
+
+    if (intersects.length > 0) {
+      const clickedPoint = intersects[0].point;
+      const nebula = createNebula();
+      nebula.position.copy(clickedPoint);
+      scene.add(nebula);
+
+      setTimeout(() => {
+        scene.remove(nebula);
+      }, 5000);
+    }
+  };
+
+  const createNebula = () => {
+    const geometry = new THREE.SphereGeometry(5, 32, 32);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x00ff00,
+      transparent: true,
+      opacity: 0.5
+    });
+    return new THREE.Mesh(geometry, material);
+  };
+
+  // Add event listeners
+  window.addEventListener('mousemove', onMouseMove);
+  window.addEventListener('wheel', onWheel);
+  window.addEventListener('click', onClick);
+
+  // Update animation loop
+  const animate = () => {
+    requestAnimationFrame(animate);
+    twinkle();
+    rotateStars();
+    if (Math.random() < 0.01) addShootingStar();
+    renderer.render(scene, camera);
+  };
+
+  animate();
+
+  // Clean up event listeners on component unmount
+  onUnmounted(() => {
+    window.removeEventListener('mousemove', onMouseMove);
+    window.removeEventListener('wheel', onWheel);
+    window.removeEventListener('click', onClick);
+  });
+};
   
   const createPlanet = (planetName) => {
     if (planet) {

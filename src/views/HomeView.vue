@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import SolarSystem from '@/components/SolarSystem.vue'
+import PlanetInfo from '@/components/PlanetInfo.vue'
 
 const planets = ref(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']);
 const selectedPlanet = ref('Earth');
@@ -12,9 +13,7 @@ const selectPlanet = (planet) => {
 
 <template>
   <div class="home">
-    <div
-      class="mx-auto py-1 bg-solar_bg bg-no-repeat w-full bg-cover bg-center bg-blend-multiply bg-black bg-opacity-35"
-    >
+    <div class="mx-auto py-1 bg-solar_bg bg-no-repeat w-full bg-cover bg-center bg-blend-multiply bg-black bg-opacity-35">
       <h1 class="text-4xl font-bold text-center my-8">Solar System Explorer</h1>
       <div class="text-center mb-8">
         <p class="mb-4">Welcome to our interactive Solar System Explorer!</p>
@@ -32,6 +31,9 @@ const selectPlanet = (planet) => {
       </div>
       <div class="w-full max-w-4xl mx-auto">
         <SolarSystem :currentPlanet="selectedPlanet" />
+      </div>
+      <div class="w-full max-w-4xl mx-auto mt-8">
+        <PlanetInfo :planetName="selectedPlanet" />
       </div>
     </div>
   </div>

@@ -1,0 +1,189 @@
+{
+    "planets": [
+      {
+        "name": "Mercury",
+        "diameter": 4879,
+        "distanceFromSun": 57.9,
+        "orbitalPeriod": 88,
+        "orbitalSpeed": 47.87,
+        "gravity": 3.7,
+        "atmosphere": {
+          "composition": ["Oxygen", "Sodium", "Hydrogen", "Helium", "Potassium"],
+          "pressure": "Virtually None"
+        },
+        "surfaceTemperature": {
+          "min": -173,
+          "max": 427
+        },
+        "moons": [],
+        "description": "Mercury is the smallest planet in our solar system and the closest to the Sun. Its surface is heavily cratered and resembles Earth's Moon. Mercury has no atmosphere to retain heat, leading to extreme temperature fluctuations.",
+        "funFact": "A year on Mercury is just 88 Earth days long, but a single day (one rotation on its axis) takes 176 Earth days.",
+        "discovery": {
+          "discoverer": "Known since ancient times",
+          "year": "Prehistory"
+        }
+      },
+      {
+        "name": "Venus",
+        "diameter": 12104,
+        "distanceFromSun": 108.2,
+        "orbitalPeriod": 225,
+        "orbitalSpeed": 35.02,
+        "gravity": 8.87,
+        "atmosphere": {
+          "composition": ["Carbon Dioxide", "Nitrogen", "Sulfur Dioxide"],
+          "pressure": "92 times that of Earth"
+        },
+        "surfaceTemperature": {
+          "min": 462,
+          "max": 462
+        },
+        "moons": [],
+        "description": "Venus is the second planet from the Sun and is similar in size and structure to Earth. However, it has an incredibly dense atmosphere composed primarily of carbon dioxide, with clouds of sulfuric acid, making it the hottest planet in the solar system.",
+        "funFact": "Venus rotates on its axis in the opposite direction of most planets, a phenomenon known as retrograde rotation. A day on Venus (243 Earth days) is longer than a Venusian year (225 Earth days).",
+        "discovery": {
+          "discoverer": "Known since ancient times",
+          "year": "Prehistory"
+        }
+      },
+      {
+        "name": "Earth",
+        "diameter": 12742,
+        "distanceFromSun": 149.6,
+        "orbitalPeriod": 365.25,
+        "orbitalSpeed": 29.78,
+        "gravity": 9.8,
+        "atmosphere": {
+          "composition": ["Nitrogen", "Oxygen", "Argon", "Carbon Dioxide"],
+          "pressure": "1 atm"
+        },
+        "surfaceTemperature": {
+          "min": -88,
+          "max": 58
+        },
+        "moons": ["Moon"],
+        "description": "Earth is the third planet from the Sun and the only known planet to support life. It has a diverse climate, liquid water, and a protective atmosphere that shields it from harmful radiation.",
+        "funFact": "Earth’s atmosphere is made up of 78% nitrogen, 21% oxygen, and trace amounts of other gases, including carbon dioxide and water vapor.",
+        "discovery": {
+          "discoverer": "N/A",
+          "year": "N/A"
+        }
+      },
+      {
+        "name": "Mars",
+        "diameter": 6779,
+        "distanceFromSun": 227.9,
+        "orbitalPeriod": 687,
+        "orbitalSpeed": 24.077,
+        "gravity": 3.71,
+        "atmosphere": {
+          "composition": ["Carbon Dioxide", "Nitrogen", "Argon"],
+          "pressure": "0.6% of Earth's"
+        },
+        "surfaceTemperature": {
+          "min": -125,
+          "max": 20
+        },
+        "moons": ["Phobos", "Deimos"],
+        "description": "Mars, also known as the Red Planet, is the fourth planet from the Sun. It has the largest volcano in the solar system, Olympus Mons, and is known for its red, iron oxide-rich soil.",
+        "funFact": "Mars has the tallest mountain in the solar system, Olympus Mons, which stands at about 22 km (13.6 miles) high.",
+        "discovery": {
+          "discoverer": "Known since ancient times",
+          "year": "Prehistory"
+        }
+      },
+      {
+        "name": "Jupiter",
+        "diameter": 139820,
+        "distanceFromSun": 778.5,
+        "orbitalPeriod": 4333,
+        "orbitalSpeed": 13.07,
+        "gravity": 24.79,
+        "atmosphere": {
+          "composition": ["Hydrogen", "Helium"],
+          "pressure": "Unmeasurable"
+        },
+        "surfaceTemperature": {
+          "min": -108,
+          "max": -108
+        },
+        "moons": ["Io", "Europa", "Ganymede", "Callisto"],
+        "description": "Jupiter is the largest planet in our solar system and is mostly made of hydrogen and helium. It is famous for the Great Red Spot, a massive storm that has been raging for hundreds of years.",
+        "funFact": "Jupiter has 79 known moons, including the four large Galilean moons: Io, Europa, Ganymede, and Callisto.",
+        "discovery": {
+          "discoverer": "Known since ancient times",
+          "year": "Prehistory"
+        }
+      },
+      {
+        "name": "Saturn",
+        "diameter": 116460,
+        "distanceFromSun": 1434,
+        "orbitalPeriod": 10759,
+        "orbitalSpeed": 9.69,
+        "gravity": 10.44,
+        "atmosphere": {
+          "composition": ["Hydrogen", "Helium"],
+          "pressure": "High"
+        },
+        "surfaceTemperature": {
+          "min": -139,
+          "max": -139
+        },
+        "moons": ["Titan", "Enceladus", "Rhea"],
+        "description": "Saturn is the second-largest planet in our solar system and is well known for its extensive ring system. The planet is mostly made of hydrogen and helium.",
+        "funFact": "Saturn’s moon Titan has a thick atmosphere and lakes of liquid methane on its surface.",
+        "discovery": {
+          "discoverer": "Known since ancient times",
+          "year": "Prehistory"
+        }
+      },
+      {
+        "name": "Uranus",
+        "diameter": 50724,
+        "distanceFromSun": 2871,
+        "orbitalPeriod": 30687,
+        "orbitalSpeed": 6.81,
+        "gravity": 8.69,
+        "atmosphere": {
+          "composition": ["Hydrogen", "Helium", "Methane"],
+          "pressure": "Higher than Earth"
+        },
+        "surfaceTemperature": {
+          "min": -224,
+          "max": -224
+        },
+        "moons": ["Miranda", "Ariel", "Umbriel", "Titania", "Oberon"],
+        "description": "Uranus is the seventh planet from the Sun and is unique for its tilted axis, which makes it appear to roll on its side. It has a pale blue color due to the methane in its atmosphere.",
+        "funFact": "Uranus orbits the Sun on its side, with an axial tilt of 98 degrees, meaning it essentially rolls around its orbit.",
+        "discovery": {
+          "discoverer": "William Herschel",
+          "year": 1781
+        }
+      },
+      {
+        "name": "Neptune",
+        "diameter": 49244,
+        "distanceFromSun": 4495,
+        "orbitalPeriod": 60190,
+        "orbitalSpeed": 5.43,
+        "gravity": 11.15,
+        "atmosphere": {
+          "composition": ["Hydrogen", "Helium", "Methane"],
+          "pressure": "Very High"
+        },
+        "surfaceTemperature": {
+          "min": -214,
+          "max": -214
+        },
+        "moons": ["Triton", "Nereid"],
+        "description": "Neptune is the eighth and farthest planet from the Sun. It is known for its deep blue color and intense storms, including the Great Dark Spot, which is similar to Jupiter’s Great Red Spot.",
+        "funFact": "Neptune has the strongest winds in the solar system, with speeds reaching up to 2,100 km/h (1,300 mph).",
+        "discovery": {
+          "discoverer": "Johann Galle",
+          "year": 1846
+        }
+      }
+    ]
+  }
+  
