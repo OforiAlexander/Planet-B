@@ -6,7 +6,7 @@ export default {
     extend: {
       backgroundImage: {
         solar_bg: "url('./src/assets/img/nasa_solar_bg.jpg')",
-        earth: "url('./src/assets/img/planets/2k_earth_daymap.jpg')"
+        earth: "url('./src/assets/img/solar_gen_all.jpg')"
       }
     },
   },

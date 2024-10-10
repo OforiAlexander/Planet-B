@@ -1,14 +1,15 @@
 <template>
-  <div class="container mx-auto px-4 pt-8">
+  <div class="mx-auto px-4 pt-8 w-full bg-earth h-screen bg-fixed bg-cover bg-no-repeat bg-black bg-opacity-35 bg-blend-multiply"  id="bg_position">
     <!-- Render content only if planetDetail is loaded -->
     <div v-if="planetDetail">
-      <div class="h-42 w-full py-12 mb-12 bg-opacity-35 rounded shadow-white shadow bg-earth" id="planetInfo">
+      <div class="h-42 w-full px-4 py-8 mb-12 bg-opacity-35 border-b-2 border-gray-50 rounded shadow-white shadow-b">
         <h1 class="text-5xl text-center font-bold mb-6">{{ planetDetail.name }}</h1>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 py-2 md:grid-cols-2 gap-8">
         <!-- Quick Facts Section -->
         <div class="flex flex-col md:flex-row gap-12 justify-center items-start w-full">
           <ul class="space-y-2">
+            <router-link to="/" class="text-blue-500 hover:text-blue-700 text-lg relative -top-7 -left-6">Go Back</router-link>
             <h2 class="text-2xl font-semibold mb-4 text-left w-full">Quick Facts</h2>
             <li><strong>Diameter:</strong> {{ planetDetail.diameter }} km</li>
             <li>
@@ -123,11 +124,8 @@ watch(() => route.params.name, loadPlanetData)
 </script>
 
 <style scope>
-#planetInfo {
-  background: url('@/assets/img/planets/2k_earth_daymap.jpg');
+#bg_position {
   background-position: 30% 70%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  height: 100vh;
 }
 </style>

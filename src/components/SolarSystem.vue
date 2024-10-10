@@ -139,24 +139,6 @@
     stars.rotation.y += 0.0001;
   };
 
-  // Shooting stars
-  const addShootingStar = () => {
-    const shootingStarGeometry = new THREE.BufferGeometry();
-    const shootingStarMaterial = new THREE.LineBasicMaterial({ color: 0xFFFFFF });
-
-    const points = [];
-    points.push(new THREE.Vector3(-1000, Math.random() * 1000 - 500, Math.random() * 500 - 250));
-    points.push(new THREE.Vector3(1000, Math.random() * 1000 - 500, Math.random() * 500 - 250));
-
-    shootingStarGeometry.setFromPoints(points);
-    const shootingStar = new THREE.Line(shootingStarGeometry, shootingStarMaterial);
-    scene.add(shootingStar);
-
-    setTimeout(() => {
-      scene.remove(shootingStar);
-    }, 1000);
-  };
-
   // Mouse movement parallax effect
   const onMouseMove = (event) => {
     const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
@@ -217,7 +199,7 @@
     requestAnimationFrame(animate);
     twinkle();
     rotateStars();
-    if (Math.random() < 0.01) addShootingStar();
+    if (Math.random() < 0.01);
     renderer.render(scene, camera);
   };
 
