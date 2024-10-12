@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        solar_bg: "url('./src/assets/img/nasa_solar_bg.jpg')",
-        earth: "url('./src/assets/img/solar_gen_all.jpg')"
+        solar_bg: "url('/img/nasa_solar_bg.jpg')",
+        earth: "url('/img/solar_gen_all.jpg')"
       }
     },
   },

@@ -40,14 +40,14 @@
   
   
   const planetTextures = {
-  Mercury: './src/assets/img/planets/2k_mercury.jpg',
-  Venus: './src/assets/img/planets/2k_venus_surface.jpg',
-  Earth: './src/assets/img/planets/2k_earth_daymap.jpg',
-  Mars: './src/assets/img/planets/2k_mars.jpg',
-  Jupiter: './src/assets/img/planets/2k_jupiter.jpg',
-  Saturn: './src/assets/img/planets/2k_saturn.jpg',
-  Uranus: './src/assets/img/planets/2k_uranus.jpg',
-  Neptune: './src/assets/img/planets/2k_neptune.jpg'
+  Mercury: '/img/planets/2k_mercury.jpg',
+  Venus: '/img/planets/2k_venus_surface.jpg',
+  Earth: '/img/planets/2k_earth_daymap.jpg',
+  Mars: '/img/planets/2k_mars.jpg',
+  Jupiter: '/img/planets/2k_jupiter.jpg',
+  Saturn: '/img/planets/2k_saturn.jpg',
+  Uranus: '/img/planets/2k_uranus.jpg',
+  Neptune: '/img/planets/2k_neptune.jpg'
 };
   
   const init = () => {
